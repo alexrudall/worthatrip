@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cowsay'
 
 Handler = Proc.new do |req, res|
@@ -7,4 +9,3 @@ Handler = Proc.new do |req, res|
   res['Content-Type'] = 'text/text; charset=utf-8'
   res.body = Cowsay.say("Hello #{name}", 'cow')
 end
-

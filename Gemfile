@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gem 'cowsay', '~> 0.3.0'
@@ -7,3 +9,5 @@ gem 'cowsay', '~> 0.3.0'
 gem 'rspec', '~> 3.9.0'
 
 gem 'byebug'
+
+gem 'webrick'
