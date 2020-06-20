@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require 'cowsay'
-
 Handler = Proc.new do |req, res|
-  name = req.query['name'] || 'World'
+  from = req.query['from']
+  to = req.query['to']
 
   res.status = 200
   res['Content-Type'] = 'text/text; charset=utf-8'
-  res.body = Cowsay.say("Hello #{name}", 'cow')
+  res.body = '2'
 end
