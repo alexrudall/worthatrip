@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'webrick'
-require '../api/index'
+require '../api/v1/distance'
 
 RSpec.describe Handler do
   describe 'GET request' do
