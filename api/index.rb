@@ -3,16 +3,14 @@
 require 'net/http'
 require 'json'
 
-Handler = Proc.new do |req, res|
+Handler = proc do |req, res|
   if valid(req)
     from = get_bearings(req.query['from'])
     to = get_bearings(req.query['to'])
-
-    res.status = 200
-    res['Content-Type'] = 'text/text; charset=utf-8'
-    res.body = calculate_distance(from, to).round.to_s
+    distance = calculate_distance(from, to).round.to_s
+    respond(res, 200, distance)
   else
-    bad_request(res)
+    respond(res, 400, "Please provide both a 'from' and a 'to' postcode")
   end
 end
 
@@ -33,8 +31,8 @@ def valid(req)
   req.query['from'] && !req.query['from'].empty? && req.query['to'] && !req.query['to'].empty?
 end
 
-def bad_request(res)
-  res.status = 400
+def respond(res, status, body)
+  res.status = status
+  res.body = body
   res['Content-Type'] = 'text/text; charset=utf-8'
-  res.body = "Please provide both a 'from' and a 'to' postcode"
 end
