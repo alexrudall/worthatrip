@@ -32,21 +32,36 @@ RSpec.describe Handler do
     context 'missing a postcode' do
       let(:from) { '' }
 
-      it 'responds with an error' do
+      it 'responds with a 400 error' do
         expect(response.status).to eq(400)
         expect(response.body).to eq("Please provide both a 'from' and a 'to' postcode")
       end
     end
 
-    context 'with an invalid postcode' do
-      let(:to) { 'M1' }
+    context 'with an invalid origin postcode' do
+      let(:from) { '$%^' }
 
-      it 'responds with an error' do
+      it 'responds with a 404 error' do
+        expect(response.status).to eq(404)
+        expect(response.body).to eq("The 'from' postcode could not be found")
+      end
+    end
+
+    context 'with an invalid destination postcode' do
+      let(:to) { '%^&' }
+
+      it 'responds with a 404 error' do
+        expect(response.status).to eq(404)
+        expect(response.body).to eq("The 'to' postcode could not be found")
       end
     end
 
     context 'with a downcased postcode' do
+      let(:from) { 'ec3n 4ab' }
+
       it 'responds with the distance' do
+        expect(response.status).to eq(200)
+        expect(response.body).to eq('263947')
       end
     end
   end

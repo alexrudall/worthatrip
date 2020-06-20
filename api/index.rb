@@ -7,8 +7,15 @@ Handler = proc do |req, res|
   if valid(req)
     from = get_bearings(req.query['from'])
     to = get_bearings(req.query['to'])
-    distance = calculate_distance(from, to).round.to_s
-    respond(res, 200, distance)
+
+    if from.nil?
+      respond(res, 404, "The 'from' postcode could not be found")
+    elsif to.nil?
+      respond(res, 404, "The 'to' postcode could not be found")
+    else
+      distance = calculate_distance(from, to).round.to_s
+      respond(res, 200, distance)
+    end
   else
     respond(res, 400, "Please provide both a 'from' and a 'to' postcode")
   end
@@ -18,7 +25,8 @@ def get_bearings(postcode)
   r = Net::HTTP.get('api.getthedata.com', "/postcode/#{CGI.escape(postcode)}")
   r = JSON.parse(r)
   r = r['data']
-  { easting: r['easting'], northing: r['northing'] }
+
+  { easting: r['easting'], northing: r['northing'] } if r && r['easting']
 end
 
 def calculate_distance(from, to)
