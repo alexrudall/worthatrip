@@ -19,7 +19,8 @@ RSpec.describe Handler do
     let(:res) { WEBrick::HTTPResponse.new(HTTPVersion: WEBrick::HTTPVersion.new('1.1')) }
 
     it 'responds with the distance' do
-      expect(Handler.call(req, res)).to eq('263619')
+      # https://ukpostcodes.tenfourzero.net/?from=ec3n4ab&to=m11ag gives 263950, accurate to within 10 metres.
+      expect(Handler.call(req, res)).to eq('263947')
     end
   end
 end
