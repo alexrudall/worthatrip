@@ -12,14 +12,14 @@ RSpec.describe Handler do
     end
     let(:query) {
       {
-        'from' => 'ABC1',
-        'to' => 'DEF2'
+        'from' => 'EC3N 4AB',
+        'to' => 'M1 1AG'
       }
     }
     let(:res) { WEBrick::HTTPResponse.new(HTTPVersion: WEBrick::HTTPVersion.new('1.1')) }
 
     it 'responds with the distance' do
-      expect(Handler.call(req, res)).to eq('2')
+      expect(Handler.call(req, res)).to eq('263619')
     end
   end
 end
