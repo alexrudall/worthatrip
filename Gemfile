@@ -8,6 +8,10 @@ gem 'webrick'
 
 # Testing #############
 
+# A modular Ruby web server interface.
+# https://github.com/rack/rack
+gem 'rack', '~> 2.2.2'
+
 # Behaviour Driven Development for Ruby.
 # https://github.com/rspec/rspec
 gem 'rspec', '~> 3.9.0'
@@ -19,6 +23,10 @@ gem 'vcr', '~> 6.0.0'
 # Stub and set expectations on HTTP requests.
 # https://github.com/bblimke/webmock
 gem 'webmock', '~> 3.8.3'
+
+# Acceptance test framework for web applications.
+# https://github.com/teamcapybara/capybara
+gem 'capybara', '~> 3.33.0'
 
 # Temp.
 gem 'byebug'
