@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.getthedata.com/postcode/EC3N+4AB
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 21 Jun 2020 08:06:48 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+      X-Powered-By:
+      - PHP/5.4.16
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '716'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status":"match","match_type":"unit_postcode","input":"EC3N 4AB","data":{"postcode":"EC3N
+        4AB","status":"live","usertype":"small","easting":533602,"northing":180570,"positional_quality_indicator":1,"country":"England","latitude":"51.508274","longitude":"-0.076272","postcode_no_space":"EC3N4AB","postcode_fixed_width_seven":"EC3N4AB","postcode_fixed_width_eight":"EC3N
+        4AB","postcode_area":"EC","postcode_district":"EC3N","postcode_sector":"EC3N
+        4","outcode":"EC3N","incode":"4AB"},"copyright":["Contains OS data (c) Crown
+        copyright and database right 2020","Contains Royal Mail data (c) Royal Mail
+        copyright and database right 2020","Contains National Statistics data (c)
+        Crown copyright and database right 2020"]}'
+  recorded_at: Sun, 21 Jun 2020 08:11:54 GMT
+- request:
+    method: get
+    uri: http://api.getthedata.com/postcode/%25%5E&
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 21 Jun 2020 08:06:48 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+      X-Powered-By:
+      - PHP/5.4.16
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '320'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status":"no_match","error":"Input must consist of only letters, numbers
+        and spaces.","copyright":["Contains OS data (c) Crown copyright and database
+        right 2020","Contains Royal Mail data (c) Royal Mail copyright and database
+        right 2020","Contains National Statistics data (c) Crown copyright and database
+        right 2020"]}'
+  recorded_at: Sun, 21 Jun 2020 08:11:54 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.getthedata.com/postcode/$%25%5E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 21 Jun 2020 08:06:48 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+      X-Powered-By:
+      - PHP/5.4.16
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '320'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status":"no_match","error":"Input must consist of only letters, numbers
+        and spaces.","copyright":["Contains OS data (c) Crown copyright and database
+        right 2020","Contains Royal Mail data (c) Royal Mail copyright and database
+        right 2020","Contains National Statistics data (c) Crown copyright and database
+        right 2020"]}'
+  recorded_at: Sun, 21 Jun 2020 08:11:54 GMT
+- request:
+    method: get
+    uri: http://api.getthedata.com/postcode/M1+1AG
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 21 Jun 2020 08:06:48 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+      X-Powered-By:
+      - PHP/5.4.16
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '703'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status":"match","match_type":"unit_postcode","input":"M1 1AG","data":{"postcode":"M1
+        1AG","status":"live","usertype":"small","easting":384738,"northing":398532,"positional_quality_indicator":1,"country":"England","latitude":"53.483282","longitude":"-2.231454","postcode_no_space":"M11AG","postcode_fixed_width_seven":"M1  1AG","postcode_fixed_width_eight":"M1   1AG","postcode_area":"M","postcode_district":"M1","postcode_sector":"M1
+        1","outcode":"M1","incode":"1AG"},"copyright":["Contains OS data (c) Crown
+        copyright and database right 2020","Contains Royal Mail data (c) Royal Mail
+        copyright and database right 2020","Contains National Statistics data (c)
+        Crown copyright and database right 2020"]}'
+  recorded_at: Sun, 21 Jun 2020 08:11:54 GMT
+recorded_with: VCR 6.0.0
