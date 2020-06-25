@@ -12,7 +12,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-            var distance = xhttp.responseText;
+            var distance = parseInt(xhttp.responseText);
 
             if (distance <= max) {
               document.getElementById('ok').style.display = 'block';
