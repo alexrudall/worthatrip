@@ -3,7 +3,28 @@
     <script>
       function checkDistance(event) {
         event.preventDefault();
-        console.log('distance')
+
+        var from = event.currentTarget[0].value
+        var max = event.currentTarget[1].value
+        var to = event.currentTarget[2].value
+        var url = encodeURI(`https://isitfar.vercel.app/api/v1/distance?from=${from}&to=${to}`)
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var distance = xhttp.responseText;
+
+            if (distance <= max) {
+              document.getElementById('ok').style.display = 'block';
+              document.getElementById('denied').style.display = 'none';
+            } else {
+              document.getElementById('ok').style.display = 'none';
+              document.getElementById('denied').style.display = 'block';
+            }
+          }
+        };
+        xhttp.open('GET', 'filename', true);
+        xhttp.send();
       }
     </script>
 
@@ -14,14 +35,14 @@
       <label for='from'>Where are you?</label><br>
       <input type='text' id='from' name='from' placeholder='postcode'><br>
       <label for='max'>How far will you go?</label><br>
-      <input type='text' id='max' name='max' placeholder='miles'><br>
+      <input type='text' id='max' name='max' placeholder='metres'><br>
       <label for='to'>Where is the dropoff?</label><br>
       <input type='text' id='to' name='to' placeholder='postcode'><br><br>
       <input type='submit' value='Submit'>
     </form>
 
-    <div>You don't deliver this far!</div>
-    <div>Nice, you deliver to this location!</div>
+    <div id='denied' style='display: none'>You don't deliver this far!</div>
+    <div id='ok' style='display: none'>Nice, you deliver to this location!</div>
 
   </body>
 </html>

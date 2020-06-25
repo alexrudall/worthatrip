@@ -101,4 +101,5 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
 
   config.include Capybara::DSL
+  Capybara.server = :webrick
 end

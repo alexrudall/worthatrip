@@ -28,5 +28,9 @@ gem 'webmock', '~> 3.8.3'
 # https://github.com/teamcapybara/capybara
 gem 'capybara', '~> 3.33.0'
 
+# Browser automation for testing javascript.
+# https://github.com/SeleniumHQ/selenium/tree/master/rb
+gem 'selenium-webdriver', '~> 3.141.59'
+
 # Temp.
 gem 'byebug'

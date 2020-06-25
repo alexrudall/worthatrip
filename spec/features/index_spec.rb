@@ -2,7 +2,7 @@ require 'rack/file'
 
 Capybara.app = Rack::File.new File.dirname '.'
 
-describe 'index', type: :feature do
+describe 'index', type: :feature, js: :true do
   before { visit 'index.html' }
 
   describe 'distance form' do
@@ -14,6 +14,7 @@ describe 'index', type: :feature do
         fill_in 'Where are you?', with: from
         fill_in 'How far will you go?', with: '2'
         fill_in 'Where is the dropoff?', with: to
+        # Submit.
         expect(page).to have_content "You don't deliver this far!"
       end
     end
@@ -23,6 +24,7 @@ describe 'index', type: :feature do
         fill_in 'Where are you?', with: 'some text'
         fill_in 'How far will you go?', with: '2000'
         fill_in 'Where is the dropoff?', with: 'some text'
+        # Submit.
         expect(page).to have_content 'Nice, you deliver to this location!'
       end
     end
