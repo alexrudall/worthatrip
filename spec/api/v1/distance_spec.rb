@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'webrick'
-require '../api/v1/distance'
+require_relative '../../../api/v1/distance'
 require 'vcr'
 require_relative '../../support/vcr'
 
