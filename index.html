@@ -1,18 +1,27 @@
 <html>
-<body>
+  <head>
+    <script>
+      function checkDistance(event) {
+        event.preventDefault();
+        console.log('distance')
+      }
+    </script>
 
-  <form>
-    <label for='from'>Where are you?</label><br>
-    <input type='text' id='from' name='from' placeholder='postcode'><br>
-    <label for='max'>How far will you go?</label><br>
-    <input type='text' id='max' name='max' placeholder='miles'><br>
-    <label for='to'>Where is the dropoff?</label><br>
-    <input type='text' id='to' name='to' placeholder='postcode'><br><br>
-    <input type='submit' value='Submit'>
-  </form>
+  </head>
+  <body>
 
-  <div>You don't deliver this far!</div>
-  <div>Nice, you deliver to this location!</div>
+    <form onsubmit='checkDistance(event)'>
+      <label for='from'>Where are you?</label><br>
+      <input type='text' id='from' name='from' placeholder='postcode'><br>
+      <label for='max'>How far will you go?</label><br>
+      <input type='text' id='max' name='max' placeholder='miles'><br>
+      <label for='to'>Where is the dropoff?</label><br>
+      <input type='text' id='to' name='to' placeholder='postcode'><br><br>
+      <input type='submit' value='Submit'>
+    </form>
 
-</body>
+    <div>You don't deliver this far!</div>
+    <div>Nice, you deliver to this location!</div>
+
+  </body>
 </html>
