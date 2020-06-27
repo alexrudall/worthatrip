@@ -12,14 +12,23 @@
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function() {
-          var distance = parseInt(request.responseText);
+          if (this.status == 200) {
+            var distance = parseInt(request.responseText);
 
-          if (distance <= max) {
-            document.getElementById('ok').style.display = 'block';
-            document.getElementById('denied').style.display = 'none';
+            if (distance <= max) {
+              document.getElementById('ok').style.display = 'block';
+              document.getElementById('denied').style.display = 'none';
+              document.getElementById('error').style.display = 'none';
+            } else {
+              document.getElementById('ok').style.display = 'none';
+              document.getElementById('denied').style.display = 'block';
+              document.getElementById('error').style.display = 'none';
+            }
           } else {
             document.getElementById('ok').style.display = 'none';
-            document.getElementById('denied').style.display = 'block';
+            document.getElementById('denied').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').innerHTML = request.responseText;
           }
         };
         request.send();
@@ -41,6 +50,6 @@
 
     <div id='denied' style='display: none'>You don't deliver this far!</div>
     <div id='ok' style='display: none'>Nice, you deliver to this location!</div>
-
+    <div id='error' style='display: none'>Error!</div>
   </body>
 </html>
