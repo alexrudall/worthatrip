@@ -4,6 +4,8 @@ function checkDistance(event) {
   document.getElementById('output').innerHTML = 'Loading...';
   document.getElementById('from').classList.remove('border-red-500');
   document.getElementById('to').classList.remove('border-red-500');
+  document.getElementById('from-error').classList.add('invisible');
+  document.getElementById('to-error').classList.add('invisible');
 
   var from = event.currentTarget[0].value
   var max = event.currentTarget[1].value
@@ -25,10 +27,14 @@ function checkDistance(event) {
     } else {
       document.getElementById('results').classList.add('invisible');
 
-      if (request.responseText == "The 'from' postcode could not be found") {
+      if (request.responseText.includes('from')) {
         document.getElementById('from').classList.add('border-red-500');
-      } else if (request.responseText == "The 'to' postcode could not be found") {
+        document.getElementById('from-error').classList.remove('invisible');
+        document.getElementById('from-error').innerHTML = request.responseText;
+      } else if (request.responseText.includes('to')) {
         document.getElementById('to').classList.add('border-red-500');
+        document.getElementById('to-error').classList.remove('invisible');
+        document.getElementById('to-error').innerHTML = request.responseText;
       }
     }
   };
