@@ -7,7 +7,7 @@
         var from = event.currentTarget[0].value
         var max = event.currentTarget[1].value
         var to = event.currentTarget[2].value
-        var url = encodeURI(`https://isitfar.vercel.app/api/v1/handler?from=${from}&to=${to}`)
+        var url = encodeURI(`api/v1/handler?from=${from}&to=${to}`)
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
