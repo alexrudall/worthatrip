@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 # https://github.com/ruby/webrick
 gem 'webrick'
 
-# Testing #############
+# Test #############
 
 # A modular Ruby web server interface.
 # https://github.com/rack/rack
@@ -32,5 +32,6 @@ gem 'capybara', '~> 3.33.0'
 # https://github.com/twalpole/apparition
 gem 'apparition', '~> 0.6.0'
 
-# Temp.
+# Breakpoint for debugging.
+# https://github.com/deivid-rodriguez/byebug
 gem 'byebug'
