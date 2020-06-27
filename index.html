@@ -28,7 +28,7 @@
             document.getElementById('ok').style.display = 'none';
             document.getElementById('denied').style.display = 'none';
             document.getElementById('error').style.display = 'block';
-            document.getElementById('error').innerHTML = request.responseText;
+            document.getElementById('error').innerHTML = 'Error: ' + request.responseText;
           }
         };
         request.send();
@@ -50,6 +50,6 @@
 
     <div id='denied' style='display: none'>You don't deliver this far!</div>
     <div id='ok' style='display: none'>Nice, you deliver to this location!</div>
-    <div id='error' style='display: none'>Error!</div>
+    <div id='error' style='display: none'></div>
   </body>
 </html>
