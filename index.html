@@ -6,52 +6,55 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <script src='javascript/distance.js'></script>
   </head>
-  <body class='bg-gray-200'>
-    <div class='pt-24 flex justify-center'>
-      <div class='w-full max-w-xs'>
-        <form class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' onsubmit='checkDistance(event)'>
-          <div class='mb-4'>
-            <label class='block text-gray-700 text-sm font-bold mb-2' for='from'>Where are you?</label>
-            <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' id='from' name='from' placeholder='postcode' required>
-          </div>
-          <div class='mb-4'>
-            <label class='block text-gray-700 text-sm font-bold mb-2' for='max'>How far will you go?</label>
-            <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='number' id='max' name='max' placeholder='metres' required>
-          </div>
-          <div class='mb-4'>
-            <label class='block text-gray-700 text-sm font-bold mb-2' for='to'>Where is the dropoff?</label>
-            <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' id='to' name='to' placeholder='postcode' required>
-          </div>
-          <div class='flex items-center justify-between mt-8'>
-            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit'>
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class='flex justify-center invisible' id='results'>
-      <div class='w-full max-w-xs'>
-        <div class="bg-teal-100 border-t-4 border-teal-500 text-teal-900 shadow-md rounded px-8 pt-6 pb-6 mb-4" role="alert">
-          <div class="flex">
-            <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
-            <div>
-              <p class="font-bold" id='output'></p>
+  <body class='bg-gray-200 flex flex-col min-h-screen'>
+    <main class='flex-grow'>
+      <div class='pt-24 flex justify-center'>
+        <div class='w-full max-w-xs'>
+          <form class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' onsubmit='checkDistance(event)'>
+            <div class='mb-4'>
+              <label class='block text-gray-700 text-sm font-bold mb-2' for='from'>Where are you?</label>
+              <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' id='from' name='from' placeholder='postcode' required>
             </div>
-          </div>
-          <div class='mt-6'>
-            <p class='text-center text-gray-500 text-xs'>
-              Source: <a href='https://www.getthedata.com/open-postcode-geo'>Office for National Statistics</a>
-            </p>
-            <p class='text-center text-gray-500 text-xs'>
-              Open Government Licence v3.0
-            </p>
+            <div class='mb-4'>
+              <label class='block text-gray-700 text-sm font-bold mb-2' for='max'>How far will you go?</label>
+              <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='number' id='max' name='max' placeholder='metres' required>
+            </div>
+            <div class='mb-4'>
+              <label class='block text-gray-700 text-sm font-bold mb-2' for='to'>Where is the dropoff?</label>
+              <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' id='to' name='to' placeholder='postcode' required>
+            </div>
+            <div class='flex items-center justify-between mt-8'>
+              <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit'>
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class='flex justify-center invisible' id='results'>
+        <div class='w-full max-w-xs'>
+          <div class="bg-teal-100 border-t-4 border-teal-500 text-teal-900 shadow-md rounded px-8 pt-6 pb-6 mb-4" role="alert">
+            <div class="flex">
+              <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+              <div>
+                <p class="font-bold" id='output'></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
-
+    <footer>
+      <div class='text-center text-gray-500 text-xs my-8'>
+        <p>
+          Source: <a href='https://www.getthedata.com/open-postcode-geo'>Office for National Statistics</a>
+        </p>
+        <p>
+          Open Government Licence v3.0
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
