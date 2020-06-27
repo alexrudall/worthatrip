@@ -8,7 +8,7 @@ function checkDistance(event) {
   document.getElementById('to-error').classList.add('hidden');
 
   var from = event.currentTarget[0].value
-  var max = event.currentTarget[1].value
+  var max = toMetres(event.currentTarget[1].value)
   var to = event.currentTarget[2].value
   var url = encodeURI(`api/v1/handler?from=${from}&to=${to}`)
 
@@ -39,4 +39,8 @@ function checkDistance(event) {
     }
   };
   request.send();
+}
+
+function toMetres(miles) {
+  miles * 1609.344
 }
