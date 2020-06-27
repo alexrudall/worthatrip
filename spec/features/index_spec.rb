@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rack/file'
 require 'webrick'
 require_relative '../../api/v1/handler'
@@ -54,6 +56,5 @@ describe 'index', type: :feature, js: true do
         expect(page).to have_content "The 'to' postcode could not be found"
       end
     end
-
   end
 end

@@ -4,7 +4,7 @@ require 'net/http'
 require 'json'
 
 class Handler < WEBrick::HTTPServlet::AbstractServlet
-  def do_GET request, response
+  def do_GET(request, response)
     if valid?(request)
       from = get_bearings(request.query['from'])
       to = get_bearings(request.query['to'])
@@ -45,5 +45,4 @@ class Handler < WEBrick::HTTPServlet::AbstractServlet
     response.body = body
     response['Content-Type'] = 'text/text; charset=utf-8'
   end
-
 end
