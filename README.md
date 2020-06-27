@@ -11,7 +11,11 @@ Uses plain Ruby rather than a framework to keep the size down and allow deployme
 CSS by [Tailwind](https://tailwindcss.com/).
 
 ## Where does the data come from?
-[Source: Office for National Statistics licensed under the Open Government Licence v3.0](https://www.getthedata.com/open-postcode-geo)
+
+Utilises the [Open Postcode Geo API](https://www.getthedata.com/open-postcode-geo-api) to get the eastings and northings of each postcode. Pythagoras' theorem is used to calculate the distance between each point.
 
 ## Any limitations?
 Excludes Northern Ireland due to licensing requirements.
+
+## Data Attribution
+Office for National Statistics licensed under the Open Government Licence v3.0
