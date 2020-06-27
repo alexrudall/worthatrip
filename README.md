@@ -14,6 +14,15 @@ CSS by [Tailwind](https://tailwindcss.com/).
 
 Utilises the [Open Postcode Geo API](https://www.getthedata.com/open-postcode-geo-api) to get the eastings and northings of each postcode. Pythagoras' theorem is used to calculate the distance between each point.
 
+## How do I use the API?
+Pass the `from` and `to` postcodes as query strings to get the 'as the crow flies' distance between the postcodes in metres.
+
+The Open Postcode Geo API encourages the use of (URL-encoded `%20`) spaces since some postcodes can only be distinguished from either with spaces. Letter case doesn't matter.
+
+### Example
+
+`https://isitfar.vercel.app/api/v1/handler?from=EC3N%204AB&to=M1%201AG`
+
 ## Any limitations?
 Excludes Northern Ireland due to licensing requirements.
 
