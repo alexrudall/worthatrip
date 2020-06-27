@@ -1,6 +1,6 @@
 function checkDistance(event) {
   event.preventDefault();
-
+  document.getElementById('results').classList.remove('invisible');
   document.getElementById('output').innerHTML = 'Loading...';
 
   var from = event.currentTarget[0].value
