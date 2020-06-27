@@ -13,6 +13,7 @@ function checkDistance(event) {
   request.onload = function() {
     if (this.status == 200) {
       var distance = parseInt(request.responseText);
+      document.getElementById('results').classList.remove('invisible');
 
       if (distance <= max) {
         document.getElementById('output').innerHTML = 'Nice, you deliver to this location!';
@@ -20,6 +21,8 @@ function checkDistance(event) {
         document.getElementById('output').innerHTML = "You don't deliver this far!";
       }
     } else {
+      document.getElementById('results').classList.add('invisible');
+
       document.getElementById('output').innerHTML = 'Error: ' + request.responseText;
     }
   };
