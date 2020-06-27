@@ -4,6 +4,8 @@
       function checkDistance(event) {
         event.preventDefault();
 
+        document.getElementById('output').innerHTML = 'Searching...';
+
         var from = event.currentTarget[0].value
         var max = event.currentTarget[1].value
         var to = event.currentTarget[2].value
@@ -16,19 +18,12 @@
             var distance = parseInt(request.responseText);
 
             if (distance <= max) {
-              document.getElementById('ok').style.display = 'block';
-              document.getElementById('denied').style.display = 'none';
-              document.getElementById('error').style.display = 'none';
+              document.getElementById('output').innerHTML = 'Nice, you deliver to this location!';
             } else {
-              document.getElementById('ok').style.display = 'none';
-              document.getElementById('denied').style.display = 'block';
-              document.getElementById('error').style.display = 'none';
+              document.getElementById('output').innerHTML = "You don't deliver this far!";
             }
           } else {
-            document.getElementById('ok').style.display = 'none';
-            document.getElementById('denied').style.display = 'none';
-            document.getElementById('error').style.display = 'block';
-            document.getElementById('error').innerHTML = 'Error: ' + request.responseText;
+            document.getElementById('output').innerHTML = 'Error: ' + request.responseText;
           }
         };
         request.send();
@@ -48,8 +43,6 @@
       <input type='submit' value='Submit'>
     </form>
 
-    <div id='denied' style='display: none'>You don't deliver this far!</div>
-    <div id='ok' style='display: none'>Nice, you deliver to this location!</div>
-    <div id='error' style='display: none'></div>
+    <div id='output'></div>
   </body>
 </html>
