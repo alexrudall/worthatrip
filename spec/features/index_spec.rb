@@ -39,19 +39,11 @@ describe 'index', type: :feature, js: true do
       end
     end
 
-    context 'when missing a postcode' do
-      let(:from) { '' }
-
-      it 'shows the error' do
-        expect(page).to have_content "Error: Please provide both a 'from' and a 'to' postcode"
-      end
-    end
-
     context 'with an invalid origin postcode' do
       let(:from) { '$%^' }
 
       it 'shows the error' do
-        expect(page).to have_content "Error: The 'from' postcode could not be found"
+        expect(page).to have_content "The 'from' postcode could not be found"
       end
     end
 
@@ -59,7 +51,7 @@ describe 'index', type: :feature, js: true do
       let(:to) { '$%^' }
 
       it 'shows the error' do
-        expect(page).to have_content "Error: The 'to' postcode could not be found"
+        expect(page).to have_content "The 'to' postcode could not be found"
       end
     end
 
