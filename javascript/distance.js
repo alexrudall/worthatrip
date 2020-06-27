@@ -42,5 +42,5 @@ function checkDistance(event) {
 }
 
 function toMetres(miles) {
-  miles * 1609.344
+  return miles * 1609.344
 }
