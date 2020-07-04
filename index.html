@@ -18,7 +18,10 @@
             </div>
             <div class='mb-4'>
               <label class='block text-gray-700 text-sm font-bold mb-2' for='max'>How far will you go?</label>
-              <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='number' step='any' id='max' name='max' placeholder='miles' required>
+              <div class='flex'>
+                <input class='shadow focus:shadow-outline appearance-none border rounded-l w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none' type='number' step='any' id='max' name='max' placeholder='distance' required>
+                <span class='shadow text-sm text-gray-700 border rounded-r py-2 px-3 bg-gray-300 whitespace-no-wrap'>miles</span>
+              </div>
             </div>
             <div class='mb-4'>
               <label class='block text-gray-700 text-sm font-bold mb-2' for='to'>Where is the dropoff?</label>
