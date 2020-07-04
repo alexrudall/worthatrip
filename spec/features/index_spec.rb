@@ -9,7 +9,7 @@ Capybara.app = Rack::File.new File.dirname '.'
 describe 'index', type: :feature, js: true do
   before do
     # Easier to hit live than run a local server! 🤷‍♂️
-    visit 'https://worththetrip.vercel.app/'
+    visit 'https://worthatrip.vercel.app/'
     fill_in 'Where are you?', with: from
     fill_in 'How far will you go?', with: distance
     fill_in 'Where is the dropoff?', with: to

@@ -1,4 +1,4 @@
-# worththetrip
+# worthatrip
 
 ## What is this?
 A microservice to get the distance between 2 UK postcodes. Built for my friends at [Jerk Off BBQ](https://www.jerkoffbbq.com/).
@@ -21,7 +21,7 @@ The Open Postcode Geo API encourages the use of (URL-encoded `%20`) spaces since
 
 ### Example
 
-`https://worththetrip.vercel.app/api/v1/handler?from=EC3N%204AB&to=M1%201AG`
+`https://worthatrip.vercel.app/api/v1/handler?from=EC3N%204AB&to=M1%201AG`
 
 ## Any limitations?
 Excludes Northern Ireland due to licensing requirements.
