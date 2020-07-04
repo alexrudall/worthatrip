@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'webrick'
-require_relative '../../../api/v1/handler'
+require_relative '../../../api/v1/distance'
 require 'vcr'
 require_relative '../../support/vcr'
 
-RSpec.describe Handler do
+RSpec.describe Distance do
   before :all do
     @server = WEBrick::HTTPServer.new
   end
@@ -29,7 +29,7 @@ RSpec.describe Handler do
     context 'with valid postcodes' do
       before do
         VCR.use_cassette('get_distance') do
-          Handler.new(@server).do_GET(request, response)
+          Distance.new(@server).do_GET(request, response)
         end
       end
 
@@ -45,7 +45,7 @@ RSpec.describe Handler do
       let(:from) { '' }
 
       before do
-        Handler.new(@server).do_GET(request, response)
+        Distance.new(@server).do_GET(request, response)
       end
 
       it 'responds with a 400 error' do
@@ -59,7 +59,7 @@ RSpec.describe Handler do
 
       before do
         VCR.use_cassette('get_distance_bad_from') do
-          Handler.new(@server).do_GET(request, response)
+          Distance.new(@server).do_GET(request, response)
         end
       end
 
@@ -74,7 +74,7 @@ RSpec.describe Handler do
 
       before do
         VCR.use_cassette('get_distance_bad_to') do
-          Handler.new(@server).do_GET(request, response)
+          Distance.new(@server).do_GET(request, response)
         end
       end
 
@@ -89,7 +89,7 @@ RSpec.describe Handler do
 
       before do
         VCR.use_cassette('get_distance_downcase') do
-          Handler.new(@server).do_GET(request, response)
+          Distance.new(@server).do_GET(request, response)
         end
       end
 

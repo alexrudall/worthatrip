@@ -21,7 +21,7 @@ The Open Postcode Geo API encourages the use of (URL-encoded `%20`) spaces since
 
 ### Example
 
-`https://isitfar.vercel.app/api/v1/handler?from=EC3N%204AB&to=M1%201AG`
+`https://isitfar.vercel.app/api/v1/distance?from=EC3N%204AB&to=M1%201AG`
 
 ## Any limitations?
 Excludes Northern Ireland due to licensing requirements.

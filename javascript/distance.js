@@ -10,7 +10,7 @@ function checkDistance(event) {
   var from = event.currentTarget[0].value
   var max = toMetres(event.currentTarget[1].value)
   var to = event.currentTarget[2].value
-  var url = encodeURI(`api/v1/handler?from=${from}&to=${to}`)
+  var url = encodeURI(`api/v1/distance?from=${from}&to=${to}`)
 
   var request = new XMLHttpRequest();
   request.open('GET', url, true);

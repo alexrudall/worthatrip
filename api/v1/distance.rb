@@ -3,7 +3,7 @@
 require 'net/http'
 require 'json'
 
-class Handler < WEBrick::HTTPServlet::AbstractServlet
+class Distance < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(request, response)
     if valid?(request)
       from = get_bearings(request.query['from'])

@@ -2,7 +2,7 @@
 
 require 'rack/file'
 require 'webrick'
-require_relative '../../api/v1/handler'
+require_relative '../../api/v1/distance'
 
 Capybara.app = Rack::File.new File.dirname '.'
 
