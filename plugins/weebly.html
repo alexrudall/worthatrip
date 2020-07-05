@@ -3,9 +3,11 @@
     event.preventDefault();
     document.getElementById('results').classList.remove('hidden');
     document.getElementById('output').innerHTML = 'Loading...';
+    document.getElementById('from-error').innerHTML = '';
+    document.getElementById('to-error').innerHTML = '';
 
-    var from = 'W1J 7BX'
-    var max = toMetres(5)
+    var from = 'W1J 7BX' // Replace 'W1J 7BX' with your starting postcode.
+    var max = toMetres(5) // Replace '5' with the number of miles you are willing to deliver.
     var to = event.currentTarget[0].value
     var url = encodeURI(`https://worthatrip.com/api/v1/handler?from=${from}&to=${to}`)
 
@@ -17,17 +19,17 @@
         document.getElementById('results').classList.remove('hidden');
 
         if (distance <= max) {
-          document.getElementById('output').innerHTML = 'Nice, you deliver to this location!';
+          document.getElementById('output').innerHTML = 'Nice, we deliver to this location!';
         } else {
-          document.getElementById('output').innerHTML = "You don't deliver this far!";
+          document.getElementById('output').innerHTML = "Sorry, we don't currently deliver this far.";
         }
       } else {
-        document.getElementById('results').classList.add('hidden');
+        document.getElementById('output').innerHTML = '';
 
         if (request.responseText.includes('from')) {
-          document.getElementById('from-error').innerHTML = request.responseText;
+
+          document.getElementById('from-error').innerHTML = 'This plugin has been incorrectly configured. ' + request.responseText;
         } else if (request.responseText.includes('to')) {
-          document.getElementById('to').classList.add('border-red-500');
           document.getElementById('to-error').innerHTML = request.responseText;
         }
       }
@@ -51,7 +53,7 @@
   </div>
   <div>
     <button type='submit'>
-      Check if we deliver!
+      Do we deliver?
     </button>
   </div>
 </form>
