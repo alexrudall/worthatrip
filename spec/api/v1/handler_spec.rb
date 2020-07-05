@@ -35,7 +35,7 @@ RSpec.describe Handler do
 
       it 'responds with the distance' do
         # Sense checked with https://ukpostcodes.tenfourzero.net/?from=ec3n4ab&to=m11ag
-        # which gives 263950, accurate to within 10 metresponse.
+        # which gives 263950, accurate to within 10 metres.
         expect(response.status).to eq(200)
         expect(response.body).to eq('263947')
       end
