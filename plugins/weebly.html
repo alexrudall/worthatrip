@@ -1,3 +1,7 @@
+<!-- You can use this plugin on Weebly by clicking on 'Build' and then 'Embed Code'. Replace
+W1J 7BX with your postcode and set maxDeliveryMiles to the number of miles you are
+willing to deliver. -->
+
 <script>
   function checkDistance(event) {
     event.preventDefault();
@@ -7,7 +11,8 @@
     document.getElementById('to-error').innerHTML = '';
 
     var from = 'W1J 7BX' // Replace 'W1J 7BX' with your starting postcode.
-    var max = toMetres(5) // Replace '5' with the number of miles you are willing to deliver.
+    var maxDeliveryMiles = 5 // Replace '5' with the number of miles you are willing to deliver.
+    var max = toMetres(maxDeliveryMiles)
     var to = event.currentTarget[0].value
     var url = encodeURI(`https://worthatrip.com/api/v1/handler?from=${from}&to=${to}`)
 
