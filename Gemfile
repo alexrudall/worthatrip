@@ -22,7 +22,7 @@ gem 'vcr', '~> 6.0.0'
 
 # Stub and set expectations on HTTP requests.
 # https://github.com/bblimke/webmock
-gem 'webmock', '~> 3.8.3'
+gem 'webmock', '~> 3.9.2'
 
 # Acceptance test framework for web applications.
 # https://github.com/teamcapybara/capybara
