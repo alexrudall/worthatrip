@@ -10,7 +10,7 @@ gem 'webrick'
 
 # A modular Ruby web server interface.
 # https://github.com/rack/rack
-gem 'rack', '~> 2.2.2'
+gem 'rack', '~> 2.2.3'
 
 # Behaviour Driven Development for Ruby.
 # https://github.com/rspec/rspec
