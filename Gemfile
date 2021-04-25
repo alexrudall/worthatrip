@@ -14,7 +14,7 @@ gem 'rack', '~> 2.2.3'
 
 # Behaviour Driven Development for Ruby.
 # https://github.com/rspec/rspec
-gem 'rspec', '~> 3.9.0'
+gem 'rspec', '~> 3.10.0'
 
 # Cache results of externa HTTP requests.
 # https://github.com/vcr/vcr
