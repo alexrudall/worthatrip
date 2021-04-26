@@ -26,7 +26,7 @@ gem 'webmock', '~> 3.12.2'
 
 # Acceptance test framework for web applications.
 # https://github.com/teamcapybara/capybara
-gem 'capybara', '~> 3.33.0'
+gem 'capybara', '~> 3.35.3'
 
 # Capybara driver for Chrome for testing javascript.
 # https://github.com/twalpole/apparition
